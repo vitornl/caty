@@ -20,9 +20,6 @@
 
 }
 
-
-
-
 @font-face {
     font-family: 'open_sanslight';
     src: url('../fonts/opensans-light-webfont.eot');
@@ -34,9 +31,6 @@
     font-style: normal;
 
 }
-
-
-
 
 @font-face {
     font-family: 'open_sansregular';
@@ -61,6 +55,7 @@
     font-style: normal;
 
 }
+
 
 /* ==========================================================================
    Global styles starts here
@@ -205,6 +200,28 @@ p{ font-family: 'open_sansregular'; font-size: 14px; line-height: 22px; color: #
     .featured-content p{color: #fff; padding-bottom: 50px;}
     .featured-content .block-content{ background: #259cf8; padding-top: 60px; border-radius: 5px;}
     .featured-image{margin-bottom: -140px;}
+
+    h2.letter-openning {
+      font-family: 'Tangerine',cursive;
+      font-size: 60px;
+      font-weight: 100;
+      padding-top: 25px;
+      text-align: left;
+    }
+    p.letter-contain {
+      font-family: 'Tangerine',cursive;
+      font-size: 45px;
+      color: #676767;
+      text-align: center;
+    }
+    h2.letter-ending {
+      font-family: 'Tangerine',cursive;
+      font-size: 55px;
+      font-weight: 100;
+      padding-top: 10px;
+      padding-bottom: 5px;
+      text-align: right;
+    }
 
 /* ==========================================================================
    Sidebar styles starts here
