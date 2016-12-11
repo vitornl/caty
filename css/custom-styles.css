@@ -230,6 +230,16 @@ p{ font-family: 'open_sansregular'; font-size: 14px; line-height: 22px; color: #
       width: 32px;
     }
 
+    #collage {
+      display: block;
+      margin: 0 auto;
+    }
+
+    #letter-line {
+      display: block;
+      margin: 0 auto;
+    }
+
 /* ==========================================================================
    Sidebar styles starts here
 
