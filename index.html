@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html class="no-js">
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -16,110 +15,104 @@
         <link rel="icon" href="img/heart.png">
         <script src="js/modernizr.custom.js"></script>
         <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <style>
+            #clockdiv{
+            color: #fff;
+            display: inline-block;
+            font-weight: 100;
+            text-align: center;
+            font-size: 30px;
+            }
+            #clockdiv > div{
+            padding: 10px;
+            border-radius: 3px;
+            background: #00173F;
+            display: inline-block;
+            }
+            #clockdiv div > span{
+            padding: 15px;
+            border-radius: 3px;
+            background: #4c5c78;
+            display: inline-block;
+            }
+            .smalltext{
+            padding-top: 5px;
+            font-size: 16px;
+            }
+        </style>
     </head>
     <body>
-        <div class="wrapper-blue">
+        <div class="wrapper-blue" style="margin: 0; height: 100%;">
             <div class="site-header">
                 <div class="logo">
-                    <h1>Feliz aniversário<span> Caty</span></h1>
+                    <h1>D.E.S.C.U.B.R.A.<span>Caty</span></h1>
                 </div>
-                <div class="menu-bar">
-                    <div class="navbar">
-                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <i class="fw-icon-th-list"></i>
-                        </a>
-                        <div class="nav-collapse collapse">
-                            <ul class="nav">
-                                <li class="active"><a href="#">Home</a></li>
-                            </ul>
-                        </div>
-                        <!--/.nav-collapse -->
+                </br>
+                <div id="clockdiv">
+                    <div>
+                        <span class="days"></span>
+                        <div class="smalltext">Days</div>
+                    </div>
+                    <div>
+                        <span class="hours"></span>
+                        <div class="smalltext">Hours</div>
+                    </div>
+                    <div>
+                        <span class="minutes"></span>
+                        <div class="smalltext">Minutes</div>
+                    </div>
+                    <div>
+                        <span class="seconds"></span>
+                        <div class="smalltext">Seconds</div>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="ruler"></div>
-                </div>
-                <div class="container">
-                    <div class="banner">
-                        <div id="myCarousel" class="carousel slide">
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <img src="img/head.png" alt="">
-                                </div>
-                            </div>
-                            <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
+                <br/>
+                <img src="img/heart-emoji.png" alt="heart" style="padding-top: 5%; align: middle;"/>
+                <!-- /container -->
+                <script>
+                    function getTimeRemaining(endtime) {
+                      var t = Date.parse(endtime) - Date.parse(new Date());
+                      var seconds = Math.floor((t / 1000) % 60);
+                      var minutes = Math.floor((t / 1000 / 60) % 60);
+                      var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+                      var days = Math.floor(t / (1000 * 60 * 60 * 24));
+                      return {
+                        'total': t,
+                        'days': days,
+                        'hours': hours,
+                        'minutes': minutes,
+                        'seconds': seconds
+                      };
+                    }
+
+                    function initializeClock(id, endtime) {
+                      var clock = document.getElementById(id);
+                      var daysSpan = clock.querySelector('.days');
+                      var hoursSpan = clock.querySelector('.hours');
+                      var minutesSpan = clock.querySelector('.minutes');
+                      var secondsSpan = clock.querySelector('.seconds');
+
+                      function updateClock() {
+                        var t = getTimeRemaining(endtime);
+
+                        daysSpan.innerHTML = t.days;
+                        hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+                        minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+                        secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+                        if (t.total <= 0) {
+                          clearInterval(timeinterval);
+                        }
+                      }
+
+                      updateClock();
+                      var timeinterval = setInterval(updateClock, 1000);
+                      }
+
+                    var deadline = new Date(Date.parse('2016-12-20T00:00:00-03:00'));
+                    initializeClock('clockdiv', deadline);
+                </script>
             </div>
         </div>
-        <div class="featured-heading">
-            <ul class="grid effect-3" id="grid">
-                <li>
-                    <h1><3 Eu te AMO <3</h1>
-                </li>
-            </ul>
-        </div>
-        <div class="container">
-            <!-- class="col-md-12"-->
-            <h2 class="letter-openning">Olá, gatinha,</h2>
-            <p class="letter-contain">
-              &nbsp;&nbsp;&nbsp;&nbsp;Finalmente dia 20 de Dezembro! Se colocar no Google vai ver que um montão de coisas aconteceram nesse dia,
-              mas nenhuma delas é tão importante quanto a minha motivação para escrever isso para você!
-              <img class="emoji" src="img/:).png" alt=":)" />
-              <br />&nbsp;&nbsp;&nbsp;&nbsp;Na realidade, pensei em infinitas maneiras de como escrever isso, de quais maneiras deveria fazer
-              e mais uma infinidade de outras perguntas que me lembram todo o dia de como sou inseguro com algumas coisas.
-              <img class="emoji" src="img/:x.png" alt=":x" /> Entretanto, acho que encontrei aqui o lugar certo para conseguir
-              dizer uma pequena parte - porque certas coisas são simplesmente imensuráveis - de tudo que você é e significa para mim...
-              <br />&nbsp;&nbsp;&nbsp;&nbsp;Conheço-te a pouco mais de um ano e até hoje lembro daquela menina linda com um curativo enorme no
-              dedo. Momentos depois essa mesma menina estava dançando comigo no Just Dance (me ganhando) e nesse momento pensei: "nossa, preciso
-              conhecê-la.". Desde aquele dia conversamos afinco quase todos os dias, nos aproximamos. Trocamos presentes, músicas, danças; contamos
-              as situações engraçadas, estranhas, felizes e tristes que nos acontecia, assim como todos nossos medos e vitórias que surgiram.
-              Hoje, pouco mais de um ano depois, afirmo com toda certeza: aquela menina se foi.
-              Se foi para se tornar uma mulher madura, muito determinada, certa de suas capacidades e pronta para enfrentar a todos
-              os seus medos, mas, da menina, ficou aquele sorriso gostoso que você sempre dá quando nos vemos, deixou esse
-              coração que é impossível de guardar em uma caixinha de tão enorme e bondozo que é. Rimos, brigamos e implicamos um com o outro,
-              mas nunca sem deixar qualquer pontinha sem ser acertada. Chamei-te dos mais diversos nomes - de monstrinha à amor - e você respondeu
-              a todos deles com muito carinho. Enfim, fizemos muitas coisas e sou agradecidos por cada uma delas.
-              <br />&nbsp;&nbsp;&nbsp;&nbsp;Enrolei esse montão só para dizer que hoje é seu aniversário, dia que você merece receber muitos e muitos
-              mimos e ser mais amada do que já é. <img class="emoji" src="img/:).png" alt=":)" /> Assim, desejo muito seu sucesso, saúde, amor e
-              carinho para sua vida, muito, muito mesmo! Quero poder ter a honra de continuar ao seu lado, escutar seus choros,
-              comemorar suas vitórias e poder te amar muito mais e por muito mais tempo.
-              <br />&nbsp;&nbsp;&nbsp;&nbsp;Quando você estiver lendo isso provavelmente você já recebeu seu quadro e sua plantinha,
-              provavelmente já gritaram a plenos pulmões "surpresa!!!" (espero muito que goste) e com muita certeza já disse que você é
-              uma pessoa mais que especial na minha vida, afinal faço isso algumas vezes ao dia hahaha Sei que não chega nem um
-              pouquinho perto, mas essas foram algumas formas de tentar agradecer tudo que você fez e faz por mim todos os dias.
-              <br />&nbsp;&nbsp;&nbsp;&nbsp;Você é a menina mais especial da minha vida e o amor que tenho por você é muito diferente de
-              qualquer outro e por isso não posso fazer nada além de ser profundamente agradecido.
-              <img class="emoji" src="img/heart-emoji.png" alt="heart" />
-            </p>
-            <h2 class="letter-ending">Vítor Lourenço,<br />20 de Dezembro de 2016.</h2>
-            <img id="letter-line" src="img/line.png" alt="" />
-            <img id= "collage" src="img/collage.png" alt="" />
-        </div>
-        <div class="copy-rights">
-            <span>Made with <img src="img/heart.png" alt="LOVE"/> by:</span> <a href="https://twitter.com/BarbarianSpock" class="links"> @BarbarianSpock</a><br>
-        </div>
-        <!-- /container -->
-        <script src="js/jquery-1.9.1.js"></script>
-        <script src="js/bootstrap.js"></script>
-        <script src="js/masonry.pkgd.min.js"></script>
-        <script src="js/imagesloaded.js"></script>
-        <script src="js/classie.js"></script>
-        <script src="js/AnimOnScroll.js"></script>
-        <script>
-            new AnimOnScroll( document.getElementById( 'grid' ), {
-              minDuration : 0.4,
-              maxDuration : 0.7,
-              viewportFactor : 0.2
-            } );
-        </script>
-        <script>
-            $('#myCarousel').carousel({
-                interval: 1800
-            });
-        </script>
     </body>
 </html>
