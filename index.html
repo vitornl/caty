@@ -39,6 +39,22 @@
             padding-top: 5px;
             font-size: 16px;
             }
+            .button {
+            background-color: #4c5c78;
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius:3px;
+            display: none;
+            }
+            .button:hover {
+            background-color: #178ce6;
+            color: white;
+            text-decoration: none;
+            }
         </style>
     </head>
     <body style="margin: 0; height: 100%; background: #00173F;">
@@ -71,7 +87,10 @@
                     <h1>Disponível em<span> 20 de Dezembro de 2016</span></h1>
                 </div>
                 <br/>
-                <img src="img/heart-emoji.png" alt="heart" style="padding-top: 2.5%; align: middle;"/>
+                <div>
+                  <img id="heartimg" src="img/heart-emoji.png" alt="heart" style="padding-top: 2.5%; align: middle;" />
+                  <a href="main.html" class="button">D.E.S.C.U.B.R.A.</a>
+                </div>
                 <!-- /container -->
                 <script>
                     function getTimeRemaining(endtime) {
@@ -112,9 +131,23 @@
                       updateClock();
                       var timeinterval = setInterval(updateClock, 1000);
                       }
-
                     var deadline = new Date(Date.parse('2016-12-20T00:00:00-03:00'));
-                    initializeClock('clockdiv', deadline);
+                    var today = new Date();
+                    if(today < deadline)
+                      initializeClock('clockdiv', deadline);
+                    else {
+                      var clock = document.getElementById('clockdiv');
+                      var daysSpan = clock.querySelector('.days');
+                      var hoursSpan = clock.querySelector('.hours');
+                      var minutesSpan = clock.querySelector('.minutes');
+                      var secondsSpan = clock.querySelector('.seconds');
+                      daysSpan.innerHTML = ('00').slice(-2);
+                      hoursSpan.innerHTML = ('00').slice(-2);
+                      minutesSpan.innerHTML = ('00').slice(-2);
+                      secondsSpan.innerHTML = ('00').slice(-2);
+                      document.getElementsByClassName('button')[0].style.display = 'inline-block';
+                      document.getElementById('heartimg').style.display = 'none';
+                    }
                 </script>
             </div>
         </div>
